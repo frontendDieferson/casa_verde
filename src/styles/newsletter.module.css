@@ -13,7 +13,7 @@
         content: "";
         display: block;
         width: 787px;
-        height: 975px;
+        height: 895px;
         background-image: url('../assets/images/imagem-hero.png');
         position: absolute;
         --baseDistance: -287px;
@@ -48,7 +48,7 @@
     opacity: 0.5;
   }
   
-  .assinaturaNewsletter h1 strong {
+  .assinaturaNewsletter strong {
     font-family: Elsie Swash Caps;
     font-size: 92px;
     font-style: normal;
@@ -84,7 +84,8 @@
 .form input[type="email"] {
   padding: 27px;
   padding-left: 55px;
-  background-color: #FFF;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 
@@ -115,7 +116,7 @@
 
   color: #202020;
 
-  opacity: 0.3;
+  opacity: 0.5;
 
 }
   
@@ -137,6 +138,10 @@
   box-shadow: 10px 10px 30px 0px #ffcb474d;
   border: 0;
   cursor: pointer;
+
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
   /* border: 1px solid #ffa100; */
 }
 

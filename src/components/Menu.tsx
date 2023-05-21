@@ -40,7 +40,6 @@ export default function Menu() {
               <Link href={'/'}>
                Meu Carrinho
               </Link>
-              /
             </li>
           </nav>
        
