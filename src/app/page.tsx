@@ -6,11 +6,15 @@ import Products from '@/components/Products'
 
 export default function Home() {
   return (
+    <>
     <main>
       <Menu />
       <AssinaturaNewsletter />
       <ContainerHero />
       <Products />
     </main>
+    <div>
+    </div>
+    </>
   )
 }

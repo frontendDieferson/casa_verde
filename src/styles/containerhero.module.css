@@ -1,6 +1,6 @@
 .Container {
     width: 900px;
-    height: 440px;
+    height: 300px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -48,7 +48,7 @@
 }
 
 .Info strong {
-    font-family: Elsie Swash Caps;
+    font-family: 'Elsie Swash Caps';
     font-size: 42px;
     font-weight: 900;
     line-height: 48px;

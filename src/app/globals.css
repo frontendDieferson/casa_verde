@@ -12,7 +12,7 @@
 
 body {
   max-width: 100%;
-  background-color: #FFF;
+  background-color: #FFFFFF;
  
 }
 
@@ -36,6 +36,7 @@ a {
 @media(min-width: 920px) {
   body {
       background-image: url('../assets/images/body-shape.png');
+      /* url('../assets/images/bg.jpg'); */
       background-repeat: no-repeat, 
                         repeat-x;
       background-position: right top;

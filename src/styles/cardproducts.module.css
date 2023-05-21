@@ -1,0 +1,56 @@
+.Container {
+    width: 480px;
+    height: 260px;
+    left: 361px;
+    
+    
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.Content {
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+
+}
+
+.Content h2 {
+    font-family: 'Elsie Swash Caps';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+
+    color: #202020;
+}
+
+.Content p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* identical to box height */
+
+
+    color: #202020;
+
+    opacity: 0.5;
+}
+
+.Content span {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+/* identical to box height */
+
+
+color: #FFCB47;
+}
