@@ -1,0 +1,147 @@
+.assinaturaNewsletter {
+    background-color: #ffe29a;
+    padding: 16px;
+    margin-top: 16px;
+    position: relative;
+  }
+  @media (min-width: 920px) {
+    .assinaturaNewsletter {
+      background-color: transparent;
+      margin-top: 155px;
+    }
+    .assinaturaNewsletter:after {
+        content: "";
+        display: block;
+        width: 787px;
+        height: 975px;
+        background-image: url('../assets/images/imagem-hero.png');
+        position: absolute;
+        --baseDistance: -287px;
+        top: calc(var(--baseDistance) + 50px);
+        right: 0;
+        z-index: -1;
+        pointer-events: none;
+
+    }
+  }
+  
+  
+  .assinaturaNewsletter__container {
+    max-width: 585px;
+  }
+  
+  .assinaturaNewsletter__container__text {
+    max-width: 481px;
+    margin-bottom: 32px;
+  }
+  
+  .assinaturaNewsletter h1 {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 24px;
+    color: #202020;
+    opacity: 0.5;
+  }
+  
+  .assinaturaNewsletter h1 strong {
+    font-family: Elsie Swash Caps;
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #202020;
+  }
+  @media (min-width: 920px) {
+    .assinaturaNewsletter h1 strong {
+      font-size: 82px;
+    }
+  }
+  
+  .assinaturaNewsletter p {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 16px;
+    color: #202020;
+
+    opacity: 0.5;
+  }
+  
+
+
+
+.form input[type="email"] {
+  padding: 27px;
+  padding-left: 55px;
+  background-color: #FFF;
+}
+
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 920px) {
+  .fieldGroup {
+    flex-direction: row;
+  }
+}
+
+.fieldGroup input {
+  flex: 1;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  background-image: url("../assets/icons/icon-mail.svg");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  outline-color: #ffcb47;
+  box-shadow: 10px 10px 30px 0px #0000000f;
+  border: 0;
+
+  color: #202020;
+
+  opacity: 0.3;
+
+}
+  
+
+.fieldGroup input:hover {
+  box-shadow: 10px 10px 30px 0px #0000002e;
+}
+
+.fieldGroup button {
+  height: 75px;
+  width: 194px;
+  left: 751px;
+  top: 597px;
+  border-radius: 0px;
+  color: #fff;
+  width: 100%;
+  background-color: #ffcb47;
+  padding: 27px;
+  box-shadow: 10px 10px 30px 0px #ffcb474d;
+  border: 0;
+  cursor: pointer;
+  /* border: 1px solid #ffa100; */
+}
+
+@media (min-width: 920px) {
+    .fieldGroup button {
+        width: initial;
+    }
+}
