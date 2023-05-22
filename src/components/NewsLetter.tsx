@@ -1,13 +1,14 @@
 
 'use client'
 import { useState } from "react";
+import { Snackbar, Alert } from '@mui/material';
 import styles from "../styles/newsletter.module.css";
 
 
 export default function AssinaturaNewsletterCliente() {
 
     const [ email, setEmail ] = useState('')
-
+    const [showAlert, setShowAlert] = useState(false);
 
     
     const handleEmailChange = (event:any) => {
@@ -18,10 +19,10 @@ export default function AssinaturaNewsletterCliente() {
         event.preventDefault()
 
         if(isValidEmail(email)) {
-            alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`);
+            setShowAlert(true);
             setEmail('')
         } else {
-            alert('Por favor, insira um email válido.')
+            setShowAlert(false);
         }
     }
 
@@ -30,6 +31,10 @@ export default function AssinaturaNewsletterCliente() {
         return emailRegex.test(email);
     }
 
+
+    const handleAlertClose = () => {
+        setShowAlert(false);
+      };
 
   return (
       <div className={styles.assinaturaNewsletter}>
@@ -53,6 +58,11 @@ export default function AssinaturaNewsletterCliente() {
                       <button>
                           Assinar Newsletter
                       </button>
+                      <Snackbar open={showAlert} autoHideDuration={4000} onClose={handleAlertClose}>
+        <Alert onClose={handleAlertClose} severity="success">
+          Obrigado pela sua assinatura, você receberá nossas novidades no e-mail {email}
+        </Alert>
+      </Snackbar>
                   </div>
               </form>
           </div>
