@@ -1,6 +1,36 @@
+
+'use client'
+import { useState } from "react";
 import styles from "../styles/newsletter.module.css";
 
-export default function AssinaturaNewsletter() {
+
+export default function AssinaturaNewsletterCliente() {
+
+    const [ email, setEmail ] = useState('')
+
+
+    
+    const handleEmailChange = (event:any) => {
+        setEmail(event.target.value)
+    }
+
+    const handleFormSubmit  = (event:any) => {
+        event.preventDefault()
+
+        if(isValidEmail(email)) {
+            alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`);
+            setEmail('')
+        } else {
+            alert('Por favor, insira um email válido.')
+        }
+    }
+
+    const isValidEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+
   return (
       <div className={styles.assinaturaNewsletter}>
           <div className={styles.assinaturaNewsletter__container}>
@@ -17,9 +47,9 @@ export default function AssinaturaNewsletter() {
                   </p>
               </div>
 
-              <form className={styles.form} action="/">
+              <form className={styles.form} onSubmit={handleFormSubmit}>
                   <div className={styles.fieldGroup}>
-                      <input type="email" placeholder='Insira seu E-mail' />
+                      <input type="email" placeholder='Insira seu E-mail' value={email} onChange={handleEmailChange}/>
                       <button>
                           Assinar Newsletter
                       </button>
