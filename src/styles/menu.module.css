@@ -43,7 +43,8 @@
 
 .menu li a {
     display: inline-block;
-    font-weight: 400;
+    font-family: 'Montserrat';
+    font-weight: 900;
     font-size: inherit;
     line-height: 1.1;
     text-decoration: none;

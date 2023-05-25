@@ -5,32 +5,66 @@ import { Snackbar, Alert } from '@mui/material';
 import styles from "../styles/newsletter.module.css";
 
 
+
+
+
 export default function AssinaturaNewsletterCliente() {
 
     const [ email, setEmail ] = useState('')
     const [showAlert, setShowAlert] = useState(false);
 
-    
-    const handleEmailChange = (event:any) => {
-        setEmail(event.target.value)
-    }
-
-    const handleFormSubmit  = (event:any) => {
-        event.preventDefault()
-
-        if(isValidEmail(email)) {
-            setShowAlert(true);
-            setEmail('')
+    const handleButtonClick = () => {
+        if (email) {
+            confirmEmailRegister(email);
+          setEmail('');
         } else {
-            setShowAlert(false);
+          alert('Por favor, insira um e-mail válido');
         }
-    }
+      };
 
-    const isValidEmail = (email: string) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
+const confirmEmailRegister = async (email: string) => {
+    try {
+        const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({email})
+        })
+        if(response.ok) {
+            alert('Obrigado pela sua assinatura, você receberá nossas novidades no e-mail cadastrado.');
+        } else {
+            alert('Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.');
+        }
 
+    } catch (error){
+        alert('Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.');
+
+    }
+}
+
+    const handleEmailChange = async (event:any) => {
+        setEmail(event.target.value)
+        
+        
+        
+    }
+    
+    const handleFormSubmit  = async (event:any) => {
+    event.preventDefault()
+
+    if(isValidEmail(email)) {
+        setShowAlert(true);
+        setEmail('')
+    } else {
+        setShowAlert(false);
+    }
+}
+
+const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
     const handleAlertClose = () => {
         setShowAlert(false);
@@ -54,7 +88,7 @@ export default function AssinaturaNewsletterCliente() {
 
               <form className={styles.form} onSubmit={handleFormSubmit}>
                   <div className={styles.fieldGroup}>
-                      <input type="email" placeholder='Insira seu E-mail' value={email} onChange={handleEmailChange}/>
+                      <input type="email" placeholder='Insira seu E-mail' value={email} onClick={handleButtonClick} onChange={handleEmailChange}/>
                       <button>
                           Assinar Newsletter
                       </button>
